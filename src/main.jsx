@@ -12,12 +12,14 @@ const router = createBrowserRouter([
     loader: ()=> fetch("http://localhost:5000/coffe")
   },
   {
-    path: "/views",
+    path: "/details/:id",
     element: <ProductView />,
+    loader: ({params}) => fetch(`http://localhost:5000/coffe/${params.id}`)
   },
   {
-    path: "/updates",
+    path: "/updates/:id",
     element: <ProductUpdate />,
+    loader: ({params}) => fetch(`http://localhost:5000/coffe/${params.id}`)
   },
   {
     path: "/addcoffes",

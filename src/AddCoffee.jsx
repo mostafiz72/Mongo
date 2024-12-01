@@ -15,6 +15,7 @@ export default function AddCoffee() {
     const Photo = form.url.value;
     const UserInfo = {name, Chef, Supplier, Taste, Category, Details, Photo}
     console.log(UserInfo);
+    form.reset();
 
     fetch('http://localhost:5000/coffe', {
       method: 'POST',
@@ -55,6 +56,7 @@ export default function AddCoffee() {
                 type="text"
                 id="firstName"
                 placeholder="Name"
+                required
                 className="mt-1 w-full border border-yellow-500 rounded-md p-2 shadow-sm focus:ring-yellow-600 focus:border-yellow-600"
               />
             </div>
@@ -135,6 +137,7 @@ export default function AddCoffee() {
               type="text"
               id="connection"
               placeholder="Your Photo URL"
+              required
               className="mt-1 w-full border border-yellow-500 rounded-md p-2 shadow-sm focus:ring-yellow-600 focus:border-yellow-600"
             />
           </div>
